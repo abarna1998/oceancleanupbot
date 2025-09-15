@@ -1,0 +1,59 @@
+﻿Goal: Build a working prototype (detection + navigation + reporting) and pilot with a small boat in the confined water body.
+Timeline (8–12 weeks):
+* Week 1–2: Requirements, dataset collection, repo init, basic API + placeholders.
+
+* Week 3–5: Integrate object detection model (YOLO/Detectron), test on sample images.
+
+* Week 6–7: Implement navigation stack (simulator → lightweight ROS/SLAM), integrate with hardware controller.
+
+* Week 8: OpenAI integration (summaries, multilingual alerts), UI for fishermen.
+
+* Week 9–10: Deploy Docker image, run small-field trial, gather feedback.
+
+* Week 11–12: Iteration, logging, risk fixes, plan scale-up.
+
+Team & Roles:
+   * 1 ML engineer (vision models)
+
+   * 1 Embedded/robotics engineer (navigation + hardware)
+
+   * 1 Backend dev (APIs, integrations)
+
+   * 1 Project lead / field liaison (fisherman outreach)
+
+Hardware (prototype):
+      * Small autonomous surface vehicle (ASV) or modified kayak (₹60k–₹3L depending on build)
+
+      * Raspberry Pi/Jetson Nano for onboard compute
+
+      * Camera (RGB) + depth sensor (optional)
+
+      * Battery + solar charging (optional)
+
+      * Collection net / small bin
+
+Software & Cloud:
+         * FastAPI backend, Docker
+
+         * Optional cloud infra for data (AWS/GCP/Azure) or a low-cost VPS
+
+         * OpenAI API usage for summarization/chat (cost depends on usage)
+
+Estimated budget (prototype): ₹150k–₹800k (high variance based on hardware & sensors)
+Risks & Mitigation:
+            * Model false positives → collect more labeled data & threshold tuning.
+
+            * Communications loss → implement local autonomy fallback.
+
+            * Mechanical failure → modular design, replaceable parts, quick retrieval.
+
+            * Regulatory / local permissions → coordinate with local maritime authorities.
+
+Success metrics:
+               * Detection precision/recall (>80% target after training)
+
+               * Net kg of debris removed in pilot
+
+               * Reduction in fisherman complaints of net damage
+
+               * Positive stakeholder feedback from at least 5 local fishermen
